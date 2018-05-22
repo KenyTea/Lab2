@@ -32,14 +32,18 @@ namespace Lab2
             string path = @"C:\temp";
             DirectoryInfo dir = new DirectoryInfo(path); // В папке С:\temp создайте папки К1 и К2.
             dir.Create();
+            Console.WriteLine("Создана Папка temp");
 
             dir.CreateSubdirectory("K1"); // папки К1
             dir.CreateSubdirectory("K2"); // папки К2
+            Console.WriteLine("Создана Папкb K1 и K1 в temp");
+
             string path2 = @"C:\temp\K1\t1.txt";
 
             FileInfo file = new FileInfo(path2); // создайте файл t1.txt, в который запишите следующий текст :
             FileStream fs = file.Create(); // создание файла
             fs.Close(); // закрыли поток
+            Console.WriteLine("Создана файл t1");
 
             using (StreamWriter sw = new StreamWriter(path2)) // Иванов Иван Иванович, 1965 года рождения, место жительства г. Саратов
             {
@@ -58,6 +62,7 @@ namespace Lab2
             FileInfo file2 = new FileInfo(path3);// создайте файл t2.txt, в который запишите следующий текст:
             FileStream fs2 = file2.Create(); // создание файла
             fs2.Close(); // закрыли поток
+            Console.WriteLine("Создана файл 21");
 
             using (StreamWriter sw = new StreamWriter(path3)) // Петров Сергей Федорович, 1966 года рождения, место жительства г.Энгельс
             {
@@ -74,6 +79,8 @@ namespace Lab2
             FileInfo file3 = new FileInfo(path4);// В папке К2 создайте файл t3.txt, в который перепишите вначале текст из файла t1.txt, а затем из t2.txt
             FileStream fs3 = file3.Create(); // создание файла
             fs3.Close(); // закрыли поток
+            Console.WriteLine("Создана файл t3");
+
 
             StreamReader sr = new StreamReader(path); // coty 1
             string text1 = sr.ReadToEnd();
